@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #1E1F26;
+    --bg-surface: #26272F;
+    --bg-surface-elevated: #2D2F38;
+    --border-color: #333540;
+    --border-color-subtle: #2C2E38;
+    --text-main: #E8E6E1;
+    --text-muted: #9A9C9B;
+    --text-dim: #6C6E75;
+    
+    --diff-add: #8FBC8F;
+    --diff-add-bg: rgba(143, 188, 143, 0.12);
+    --diff-add-gutter: rgba(143, 188, 143, 0.25);
+    
+    --diff-remove: #C77B72;
+    --diff-remove-bg: rgba(199, 123, 114, 0.12);
+    --diff-remove-gutter: rgba(199, 123, 114, 0.25);
+    
+    /* RESERVED ONLY FOR REVIEW ANNOTATIONS/COMMENTS */
+    --reviewer-accent: #E8B563;
+    --reviewer-bg: rgba(232, 181, 99, 0.08);
+    --reviewer-border: rgba(232, 181, 99, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Panel surface styling */
+.panel-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* Line reveal animation for reviewer annotations */
+@keyframes revealAnnotation {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal-annotation {
+  animation: revealAnnotation 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal-annotation {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Custom Scrollbars matching VS Code theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333540;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444754;
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid #8FBC8F;
+  outline-offset: 2px;
+}
