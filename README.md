@@ -1,8 +1,9 @@
 # ⚡ RefactorPulse AI
 
-> An AI-powered code review tool that gives you instant, structured feedback — styled like a real PR diff. Live : https://refactor-plus.vercel.app/
+> An AI-powered code review tool that gives you instant, structured feedback — styled like a real PR diff.
 
-**RefactorPulse AI** lets you paste a code snippet, pick a language, and get back a clean unified diff view with line-anchored annotations powered by **Llama 3.3 70B** (via [Groq](https://console.groq.com)).
+**RefactorPulse AI** lets you paste a code snippet, pick a language, and get back a clean unified diff view with line-anchored annotations powered by **Llama 3.3 70B** (via [Groq](https://console.groq.com)). 
+ Live : https://refactor-plus.vercel.app/
 
 ---
 
